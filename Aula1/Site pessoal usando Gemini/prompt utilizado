@@ -1,0 +1,215 @@
+Prompt:
+Crie o código html , css e javascript para uma página pessoal do Rafael de Farias Lannes, onde na página inicial temos a descrição e foto "Bacharel em Sistemas de Informação - Universidade Federal Fluminense - Aprendendo algo novo todos os dias!"
+Inclua na página um menu superior para inserir uma página com meu portifólio e um link para o currículo.
+
+Resposta abaixo
+
+## Página Pessoal Rafael de Farias Lannes
+
+**HTML:**
+
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rafael de Farias Lannes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Rafael de Farias Lannes</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Portfólio</a></li>
+        <li><a href="#">Currículo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="introducao">
+      <img src="foto.jpg" alt="Foto de Rafael de Farias Lannes">
+      <p>Bacharel em Sistemas de Informação pela Universidade Federal Fluminense. Apaixonado por tecnologia e em constante aprendizado.</p>
+    </section>
+
+    <section class="habilidades">
+      <h2>Habilidades</h2>
+      </section>
+
+    <section class="projetos">
+      <h2>Projetos</h2>
+      </section>
+
+    <section class="contato">
+      <h2>Contato</h2>
+      </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Rafael de Farias Lannes</p>
+  </footer>
+</body>
+</html>
+```
+
+**CSS:**
+
+```css
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+.introducao {
+  text-align: center;
+  padding: 50px;
+}
+
+.introducao img {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.habilidades, .projetos, .contato {
+  padding: 20px;
+}
+
+footer {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+```
+
+**JavaScript:**
+
+**(Opcional)**
+
+O JavaScript pode ser utilizado para adicionar funcionalidades à página, como animações, efeitos interativos ou formulários de contato.
+
+**Observações:**
+
+* Substitua "foto.jpg" pela foto real de Rafael de Farias Lannes.
+* Preencha as seções "Habilidades", "Projetos" e "Contato" com as informações relevantes.
+* Você pode personalizar o CSS para alterar a aparência da página de acordo com sua preferência.
+
+**Dicas:**
+
+* Utilize ferramentas online para criar layouts responsivos e otimizar a página para dispositivos móveis.
+* Inclua links para suas redes sociais na página.
+* Mantenha a página atualizada com seus projetos e conquistas mais recentes.
+
+Espero que este código seja útil para criar a página pessoal de Rafael de Farias Lannes!
+
+
+-----
+
+PROMPT2:
+Faltou o Javascript
+
+## Página Pessoal Rafael de Farias Lannes com Javascript
+
+**JavaScript:**
+
+```javascript
+// Menu responsivo
+const menu = document.querySelector('nav ul');
+const menuButton = document.querySelector('#menuButton');
+
+menuButton.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
+
+// Animação de entrada na seção Introdução
+const introducao = document.querySelector('.introducao');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY >= 100) {
+    introducao.classList.add('animate');
+  } else {
+    introducao.classList.remove('animate');
+  }
+});
+
+// Animação de rolagem suave para as seções
+const sections = document.querySelectorAll('section');
+const links = document.querySelectorAll('nav a');
+
+for (let i = 0; i < links.length; i++) {
+  links[i].addEventListener('click', (event) => {
+    event.preventDefault();
+
+    const targetSection = document.querySelector(links[i].getAttribute('href'));
+    const targetPosition = targetSection.offsetTop;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
+  });
+}
+```
+
+**Explicação do código:**
+
+* **Menu responsivo:**
+    * Seleciona o menu (`nav ul`) e o botão de menu (`#menuButton`).
+    * Adiciona um evento de clique no botão de menu.
+    * Ao clicar no botão, a classe `show` é alternada no menu, abrindo ou fechando-o.
+* **Animação de entrada na seção Introdução:**
+    * Seleciona a seção Introdução (`section.introducao`).
+    * Adiciona um evento de rolagem na janela.
+    * Se a rolagem vertical for maior que 100 pixels, a classe `animate` é adicionada à seção Introdução, aplicando a animação CSS.
+    * Caso contrário, a classe `animate` é removida, desativando a animação.
+* **Animação de rolagem suave para as seções:**
+    * Seleciona todas as seções (`querySelectorAll('section')`) e os links do menu (`querySelectorAll('nav a')`).
+    * Para cada link, adiciona um evento de clique que previne o comportamento padrão do link.
+    * Obtém a seção de destino (`targetSection`) e sua posição no topo da página (`targetPosition`).
+    * Utiliza a função `window.scrollTo` para rolar suavemente até a seção de destino.
+
+**Observações:**
+
+* Este código JavaScript é apenas um exemplo e pode ser adaptado de acordo com as necessidades da página.
+* Certifique-se de incluir o código CSS necessário para as animações funcionarem corretamente.
+* Você pode adicionar outras funcionalidades à página utilizando JavaScript, como formulários de contato, galerias de imagens ou efeitos interativos.
+
+**Dicas:**
+
+* Utilize bibliotecas JavaScript como jQuery ou GreenSock para facilitar a criação de animações e efeitos interativos.
+* Estude boas práticas de acessibilidade para garantir que sua página seja acessível a todos os usuários.
+* Teste a página em diferentes navegadores e dispositivos para garantir que ela funcione corretamente em todos eles.
+
+Com este código JavaScript, a página pessoal de Rafael de Farias Lannes terá um menu responsivo, animações de entrada e rolagem suave, além de outras funcionalidades que podem ser adicionadas de acordo com suas necessidades.
+
+
+-----
